@@ -1,0 +1,54 @@
+﻿<Window x:Class="ControlTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ControlTest"
+        mc:Ignorable="d"
+        Title="ControlTest" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height=".5*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Wpisz liczbe" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock x:Name="number" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Liczba" VerticalAlignment="Top" FontSize="24" Grid.Column="1" Margin="0,76,0,0"/>
+        <TextBox x:Name="numberTextBox" HorizontalAlignment="Left" Margin="10,44,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" FontSize="18" TextChanged="numerTextBox_TextChanged" PreviewTextInput="numberTextBox_PreviewTextInput"/>
+        <RadioButton Content="1" HorizontalAlignment="Left" Margin="200,49,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+        <RadioButton Content="2" HorizontalAlignment="Left" Margin="230,49,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+        <RadioButton Content="3" HorizontalAlignment="Left" Margin="265,49,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+        <RadioButton Content="4" HorizontalAlignment="Left" Margin="200,69,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+        <RadioButton Content="5" HorizontalAlignment="Left" Margin="230,69,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+        <ListBox x:Name="myListBox" Margin="10,10,10,10" Grid.Row="1" SelectionChanged="myListBox_SelectionChanged">
+            <ListBoxItem Content="1"/>
+            <ListBoxItem Content="2"/>
+            <ListBoxItem Content="3"/>
+            <ListBoxItem Content="4"/>
+            <ListBoxItem Content="5"/>
+        </ListBox>
+        <ComboBox x:Name="readOnllyComboBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" Grid.Row="1" Grid.Column="1" SelectionChanged="readOnllyComboBox_SelectionChanged">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+        </ComboBox>
+        <ComboBox x:Name="editableCombiBox" Grid.Column="1" HorizontalAlignment="Left" Margin="270,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" IsEditable="True" PreviewTextInput="numberTextBox_PreviewTextInput" TextBoxBase.TextChanged="editableCombiBox_TextChanged">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+        </ComboBox>
+        <Slider x:Name="smallSlider" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="149" AutoToolTipPlacement="TopLeft" Maximum="5" ValueChanged="smallSlider_ValueChanged"/>
+        <Slider x:Name="bigSlider" Margin="6,10,10,10" Grid.Row="2" VerticalAlignment="Center" RenderTransformOrigin="0.533,4.304" Width="120" Height="20" Grid.ColumnSpan="2" Grid.RowSpan="1" AutoToolTipPlacement="TopLeft" Minimum="111111111" Maximum="999999999" Value="718387696" TickFrequency="8" ValueChanged="bigSlider_ValueChanged"/>
+
+
+
+    </Grid>
+</Window>
